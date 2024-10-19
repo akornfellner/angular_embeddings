@@ -1,0 +1,19 @@
+<form (submit)="calculate()">
+    <input name="testText" placeholder="This is an example" [(ngModel)]="input" />
+    <button type="submit">
+        Calculate
+    </button>
+</form>
+
+<table>
+    <tr>
+        <th>Sentence</th>
+        <th>Similarity</th>
+    </tr>
+    @for(text of texts(); track $index){
+    <tr>
+        <td>{{ text }}</td>
+        <td class="{{ validations()[$index] }}">{{ similarities()[$index] }}</td>
+    </tr>
+    }
+</table>
